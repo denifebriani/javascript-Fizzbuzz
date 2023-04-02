@@ -1,11 +1,15 @@
-/* Language: JavaScript (https://developer.mozilla.org/en-US/docs/Web/JavaScript)
- * To Run:
- * $ node fizzbuzz.js */
-
-for (i = 0; i < 101; i++) {
-    out = ""
-    if (i % 3 == 0) { out += "Fizz"; }
-    if (i % 5 == 0) { out += "Buzz"; }
-    if (out) { console.log(out); }
-    else { console.log(i); }
+var ul = document.getElementById("fizzbuzzer");
+for (var i = 1; i <= 100; i++, msg = "") {
+  if (i % 15 == 0)
+    msg = "fizzbuzz";
+  else if (i % 3 == 0)
+    msg = "fizz";
+  else if (i % 5 == 0)
+    msg = "buzz";
+  else
+    msg = "";
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode(i + " = " + msg));
+  li.setAttribute("class", msg);
+  ul.appendChild(li);
 }
